@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masroofi | مصروفي - Personal Finance Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-icon">م</div>
+          <div class="brand-text">
+            <h1>Masroofi</h1>
+            <p data-i18n="brand_sub">مصروفي</p>
+          </div>
+        </div>
+        <button class="icon-btn sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      </div>
+      <nav class="nav">
+        <a href="#" class="nav-link active" data-section="dashboard"><span class="nav-icon">🏠</span><span class="nav-label" data-i18n="nav_dashboard">لوحة التحكم</span></a>
+        <a href="#" class="nav-link" data-section="transactions"><span class="nav-icon">💳</span><span class="nav-label" data-i18n="nav_transactions">المعاملات</span></a>
+        <a href="#" class="nav-link" data-section="budget"><span class="nav-icon">📊</span><span class="nav-label" data-i18n="nav_budget">الميزانية</span></a>
+        <a href="#" class="nav-link" data-section="savings"><span class="nav-icon">🎯</span><span class="nav-label" data-i18n="nav_savings">أهداف الادخار</span></a>
+        <a href="#" class="nav-link" data-section="analytics"><span class="nav-icon">📈</span><span class="nav-label" data-i18n="nav_analytics">التحليلات</span></a>
+        <a href="#" class="nav-link" data-section="settings"><span class="nav-icon">⚙️</span><span class="nav-label" data-i18n="nav_settings">الإعدادات</span></a>
+      </nav>
+      <div class="sidebar-footer">
+        <p class="slogan" data-i18n="slogan">نظّم أموالك، واصنع مستقبلك.</p>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="main-wrap">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="mobileMenuBtn" aria-label="Menu">☰</button>
+        <div class="topbar-title">
+          <h2 id="pageTitle" data-i18n="nav_dashboard">لوحة التحكم</h2>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn ghost" id="langToggle" title="Language">EN</button>
+          <button class="btn ghost" id="themeToggle" title="Theme">🌙</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <!-- Dashboard -->
+        <section id="dashboard" class="section active">
+          <div class="hero card">
+            <div class="hero-content">
+              <span class="hero-label" data-i18n="hero_label">إدارتك المالية تبدأ من هنا</span>
+              <h2 class="hero-title" data-i18n="hero_title">فلوسك تستاهل إدارة أذكى!</h2>
+              <p class="hero-desc" data-i18n="hero_desc">افهم مصروفاتك، نظّم ميزانيتك، وقرّب أهدافك المالية خطوة بخطوة. مع مصروفي، صار بإمكانك متابعة دخلك ومصروفاتك، واكتشاف أين تذهب أموالك، والتخطيط لمستقبل مالي أكثر تنظيمًا.</p>
+              <div class="hero-features">
+                <div class="hero-feature"><span class="hero-feature-icon">✓</span><span data-i18n="hero_feat1">تابع مصروفاتك بذكاء</span></div>
+                <div class="hero-feature"><span class="hero-feature-icon">✓</span><span data-i18n="hero_feat2">تحكّم في ميزانيتك</span></div>
+                <div class="hero-feature"><span class="hero-feature-icon">✓</span><span data-i18n="hero_feat3">اقترب من أهدافك المالية</span></div>
+              </div>
+              <div class="hero-actions">
+                <button class="btn primary" id="heroAddTransactionBtn" data-i18n="hero_btn_add">أضف معاملة جديدة</button>
+                <button class="btn secondary" id="heroExploreAnalyticsBtn" data-i18n="hero_btn_explore">استكشف تحليلاتك</button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+              <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+                <defs>
+                  <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#8B7CF6" stop-opacity="0.25"/>
+                    <stop offset="100%" stop-color="#C9DDF8" stop-opacity="0.35"/>
+                  </linearGradient>
+                </defs>
+                <rect x="20" y="30" width="280" height="180" rx="24" fill="url(#heroGrad)"/>
+                <rect x="45" y="60" width="120" height="70" rx="14" fill="#ffffff" fill-opacity="0.85"/>
+                <circle cx="75" cy="95" r="16" fill="#8B7CF6" fill-opacity="0.9"/>
+                <path d="M75 86v18M66 95h18" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                <rect x="100" y="82" width="50" height="8" rx="4" fill="#8B7CF6" fill-opacity="0.5"/>
+                <rect x="100" y="98" width="35" height="6" rx="3" fill="#B8E6D0" fill-opacity="0.8"/>
+                <path d="M60 170 L110 140 L150 155 L210 110 L260 120" fill="none" stroke="#8B7CF6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="110" cy="140" r="6" fill="#B8E6D0"/>
+                <circle cx="150" cy="155" r="6" fill="#C9DDF8"/>
+                <circle cx="210" cy="110" r="6" fill="#8B7CF6"/>
+                <circle cx="260" cy="120" r="7" fill="#B8E6D0"/>
+                <path d="M245 45 h30 a10 10 0 0 1 10 10 v10 a10 10 0 0 1 -10 10 h-30 a10 10 0 0 1 -10 -10 v-10 a10 10 0 0 1 10 -10 z" fill="#8B7CF6" fill-opacity="0.9"/>
+                <circle cx="275" cy="60" r="4" fill="#fff"/>
+              </svg>
+            </div>
+          </div>
+          <div class="welcome card">
+            <h3 id="welcomeMsg" data-i18n="welcome">مرحباً بك في مصروفي</h3>
+            <p data-i18n="welcome_sub">تابع دخلك ومصروفاتك وحقق أهدافك المالية</p>
+          </div>
+          <div class="cards-grid" id="summaryCards">
+            <div class="stat-card card">
+              <p class="stat-label" data-i18n="total_balance">الرصيد الإجمالي</p>
+              <p class="stat-value" id="statBalance">0</p>
+            </div>
+            <div class="stat-card card income">
+              <p class="stat-label" data-i18n="total_income">إجمالي الدخل</p>
+              <p class="stat-value" id="statIncome">0</p>
+            </div>
+            <div class="stat-card card expense">
+              <p class="stat-label" data-i18n="total_expenses">إجمالي المصروفات</p>
+              <p class="stat-value" id="statExpenses">0</p>
+            </div>
+            <div class="stat-card card">
+              <p class="stat-label" data-i18n="remaining_budget">الميزانية المتبقية</p>
+              <p class="stat-value" id="statBudgetRemaining">0</p>
+            </div>
+          </div>
+          <div class="charts-grid">
+            <div class="card chart-card">
+              <h3 data-i18n="income_vs_expenses">الدخل مقابل المصروفات</h3>
+              <div class="chart-wrap"><canvas id="incomeExpenseChart"></canvas></div>
+            </div>
+            <div class="card chart-card">
+              <h3 data-i18n="expense_distribution">توزيع المصروفات حسب التصنيف</h3>
+              <div class="chart-wrap"><canvas id="categoryChart"></canvas></div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <h3 data-i18n="recent_transactions">آخر المعاملات</h3>
+                <button class="btn small" data-goto="transactions" data-i18n="view_all">عرض الكل</button>
+              </div>
+              <div id="recentTransactions"></div>
+            </div>
+            <div class="stack">
+              <div class="card">
+                <h3 data-i18n="budget_summary">ملخص الميزانية الشهرية</h3>
+                <div id="dashboardBudgetSummary"></div>
+              </div>
+              <div class="card">
+                <h3 data-i18n="savings_summary">ملخص أهداف الادخار</h3>
+                <div id="dashboardSavingsSummary"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Transactions -->
+        <section id="transactions" class="section">
+          <div class="section-header card">
+            <div>
+              <h3 data-i18n="nav_transactions">المعاملات</h3>
+              <p data-i18n="transactions_sub">إدارة جميع الدخل والمصروفات</p>
+            </div>
+            <div class="actions-row">
+              <button class="btn secondary" id="exportCsvBtn" data-i18n="export_csv">تصدير CSV</button>
+              <button class="btn secondary" id="printBtn" data-i18n="print_report">طباعة التقرير</button>
+              <button class="btn primary" id="addTransactionBtn" data-i18n="add_transaction">إضافة معاملة</button>
+            </div>
+          </div>
+          <div class="card filters">
+            <input type="text" id="searchInput" data-i18n-placeholder="search_placeholder" placeholder="بحث...">
+            <select id="filterType">
+              <option value="all" data-i18n="all_types">كل الأنواع</option>
+              <option value="income" data-i18n="income">دخل</option>
+              <option value="expense" data-i18n="expense">مصروف</option>
+            </select>
+            <select id="filterCategory">
+              <option value="all" data-i18n="all_categories">كل التصنيفات</option>
+            </select>
+            <input type="month" id="filterMonth">
+            <button class="btn ghost" id="clearFilters" data-i18n="clear_filters">مسح الفلاتر</button>
+          </div>
+          <div class="card table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th data-i18n="date">التاريخ</th>
+                  <th data-i18n="name">الاسم</th>
+                  <th data-i18n="type">النوع</th>
+                  <th data-i18n="category">التصنيف</th>
+                  <th data-i18n="amount">المبلغ</th>
+                  <th data-i18n="notes">ملاحظات</th>
+                  <th data-i18n="actions">إجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="transactionsBody"></tbody>
+            </table>
+            <div id="transactionsEmpty" class="empty-state hidden">
+              <p data-i18n="no_transactions">لا توجد معاملات بعد</p>
+              <button class="btn primary" id="emptyAddTransaction" data-i18n="add_transaction">إضافة معاملة</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Budget -->
+        <section id="budget" class="section">
+          <div class="section-header card">
+            <div>
+              <h3 data-i18n="nav_budget">الميزانية</h3>
+              <p data-i18n="budget_sub">حدد ميزانيتك الشهرية وتابع استهلاكك</p>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h3 data-i18n="set_budget">تحديد الميزانية الشهرية</h3>
+              <form id="budgetForm" class="form">
+                <label>
+                  <span data-i18n="monthly_budget">الميزانية الشهرية</span>
+                  <input type="number" id="budgetAmount" min="0" step="0.01" required>
+                </label>
+                <button type="submit" class="btn primary" data-i18n="save_budget">حفظ الميزانية</button>
+              </form>
+            </div>
+            <div class="card">
+              <h3 data-i18n="budget_status">حالة الميزانية</h3>
+              <div id="budgetStatus"></div>
+              <div class="progress-bar"><div class="progress-fill" id="budgetProgress"></div></div>
+              <p id="budgetAlert" class="alert hidden"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Savings -->
+        <section id="savings" class="section">
+          <div class="section-header card">
+            <div>
+              <h3 data-i18n="nav_savings">أهداف الادخار</h3>
+              <p data-i18n="savings_sub">خطط لأهدافك وحققها خطوة بخطوة</p>
+            </div>
+            <button class="btn primary" id="addGoalBtn" data-i18n="add_goal">إضافة هدف</button>
+          </div>
+          <div id="goalsList" class="goals-grid"></div>
+          <div id="goalsEmpty" class="card empty-state hidden">
+            <p data-i18n="no_goals">لا توجد أهداف ادخار بعد</p>
+            <button class="btn primary" id="emptyAddGoal" data-i18n="add_goal">إضافة هدف</button>
+          </div>
+        </section>
+
+        <!-- Analytics -->
+        <section id="analytics" class="section">
+          <div class="section-header card">
+            <div>
+              <h3 data-i18n="nav_analytics">التحليلات</h3>
+              <p data-i18n="analytics_sub">نظرة أعمق على وضعك المالي</p>
+            </div>
+            <div class="filters inline">
+              <label><span data-i18n="filter_month">الشهر</span> <input type="month" id="analyticsMonth"></label>
+            </div>
+          </div>
+          <div class="cards-grid">
+            <div class="stat-card card income"><p class="stat-label" data-i18n="total_income">إجمالي الدخل</p><p class="stat-value" id="anIncome">0</p></div>
+            <div class="stat-card card expense"><p class="stat-label" data-i18n="total_expenses">إجمالي المصروفات</p><p class="stat-value" id="anExpenses">0</p></div>
+            <div class="stat-card card"><p class="stat-label" data-i18n="net_difference">صافي الفرق</p><p class="stat-value" id="anNet">0</p></div>
+            <div class="stat-card card"><p class="stat-label" data-i18n="top_category">أكثر التصنيفات إنفاقًا</p><p class="stat-value small-text" id="anTopCategory">-</p></div>
+          </div>
+          <div class="charts-grid">
+            <div class="card chart-card">
+              <h3 data-i18n="income_vs_expenses">مقارنة الدخل والمصروفات</h3>
+              <div class="chart-wrap"><canvas id="analyticsBarChart"></canvas></div>
+            </div>
+            <div class="card chart-card">
+              <h3 data-i18n="monthly_expenses">تحليل المصروفات حسب الشهر</h3>
+              <div class="chart-wrap"><canvas id="analyticsLineChart"></canvas></div>
+            </div>
+          </div>
+          <div class="card chart-card">
+            <h3 data-i18n="expense_distribution">توزيع المصروفات حسب التصنيف</h3>
+            <div class="chart-wrap"><canvas id="analyticsPieChart"></canvas></div>
+          </div>
+        </section>
+
+        <!-- Settings -->
+        <section id="settings" class="section">
+          <div class="section-header card">
+            <div>
+              <h3 data-i18n="nav_settings">الإعدادات</h3>
+              <p data-i18n="settings_sub">خصص تجربتك في مصروفي</p>
+            </div>
+          </div>
+          <div class="settings-grid">
+            <div class="card setting-item">
+              <h4 data-i18n="language">اللغة</h4>
+              <select id="settingLanguage">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+            <div class="card setting-item">
+              <h4 data-i18n="theme">المظهر</h4>
+              <select id="settingTheme">
+                <option value="light" data-i18n="light_mode">فاتح</option>
+                <option value="dark" data-i18n="dark_mode">داكن</option>
+              </select>
+            </div>
+            <div class="card setting-item">
+              <h4 data-i18n="currency">العملة</h4>
+              <select id="settingCurrency">
+                <option value="SAR">SAR - ريال سعودي</option>
+                <option value="USD">USD - دولار أمريكي</option>
+                <option value="EUR">EUR - يورو</option>
+                <option value="AED">AED - درهم إماراتي</option>
+                <option value="KWD">KWD - دينار كويتي</option>
+                <option value="EGP">EGP - جنيه مصري</option>
+              </select>
+              <p class="hint" data-i18n="currency_hint">يتم تغيير رمز العملة فقط دون تحويل الأسعار.</p>
+            </div>
+            <div class="card setting-item danger">
+              <h4 data-i18n="data_management">إدارة البيانات</h4>
+              <div class="actions-col">
+                <button class="btn secondary" id="resetDemoBtn" data-i18n="reset_demo">إعادة تعيين البيانات التجريبية</button>
+                <button class="btn danger-btn" id="deleteAllBtn" data-i18n="delete_all">حذف جميع البيانات</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Transaction Modal -->
+  <div class="modal" id="transactionModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="transactionModal"></div>
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h3 id="transactionModalTitle" data-i18n="add_transaction">إضافة معاملة</h3>
+        <button class="icon-btn" data-close="transactionModal">✕</button>
+      </div>
+      <form id="transactionForm" class="form">
+        <input type="hidden" id="transactionId">
+        <label><span data-i18n="name">الاسم</span><input type="text" id="tName" required></label>
+        <label><span data-i18n="amount">المبلغ</span><input type="number" id="tAmount" min="0.01" step="0.01" required></label>
+        <label><span data-i18n="type">النوع</span>
+          <select id="tType" required>
+            <option value="income" data-i18n="income">دخل</option>
+            <option value="expense" data-i18n="expense">مصروف</option>
+          </select>
+        </label>
+        <label><span data-i18n="category">التصنيف</span><select id="tCategory" required></select></label>
+        <label><span data-i18n="date">التاريخ</span><input type="date" id="tDate" required></label>
+        <label><span data-i18n="notes">ملاحظات</span><textarea id="tNotes" rows="2"></textarea></label>
+        <div class="modal-actions">
+          <button type="button" class="btn secondary" data-close="transactionModal" data-i18n="cancel">إلغاء</button>
+          <button type="submit" class="btn primary" data-i18n="save">حفظ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Goal Modal -->
+  <div class="modal" id="goalModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="goalModal"></div>
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h3 id="goalModalTitle" data-i18n="add_goal">إضافة هدف</h3>
+        <button class="icon-btn" data-close="goalModal">✕</button>
+      </div>
+      <form id="goalForm" class="form">
+        <input type="hidden" id="goalId">
+        <label><span data-i18n="goal_name">اسم الهدف</span><input type="text" id="gName" required></label>
+        <label><span data-i18n="target_amount">المبلغ المستهدف</span><input type="number" id="gTarget" min="0.01" step="0.01" required></label>
+        <label><span data-i18n="saved_amount">المبلغ المدخر حاليًا</span><input type="number" id="gSaved" min="0" step="0.01" required></label>
+        <label><span data-i18n="target_date">التاريخ المستهدف (اختياري)</span><input type="date" id="gDate"></label>
+        <div class="modal-actions">
+          <button type="button" class="btn secondary" data-close="goalModal" data-i18n="cancel">إلغاء</button>
+          <button type="submit" class="btn primary" data-i18n="save">حفظ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirm Modal -->
+  <div class="modal" id="confirmModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="confirmModal"></div>
+    <div class="modal-content card small">
+      <h3 id="confirmTitle" data-i18n="confirm">تأكيد</h3>
+      <p id="confirmMessage"></p>
+      <div class="modal-actions">
+        <button class="btn secondary" id="confirmCancel" data-i18n="cancel">إلغاء</button>
+        <button class="btn danger-btn" id="confirmOk" data-i18n="confirm">تأكيد</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
