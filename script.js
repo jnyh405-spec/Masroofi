@@ -53,7 +53,44 @@ const i18n = {
     enter_amount: 'أدخل المبلغ المراد إضافته', invalid_saved: 'قيمة غير صحيحة', budget_saved: 'تم حفظ الميزانية',
     cat_food: 'الطعام', cat_shopping: 'التسوق', cat_transportation: 'المواصلات', cat_study: 'الدراسة', cat_bills: 'الفواتير',
     cat_health: 'الصحة', cat_entertainment: 'الترفيه', cat_salary: 'الراتب', cat_bonuses: 'المكافآت', cat_other: 'أخرى',
-    no_recent: 'لا توجد معاملات حديثة', no_expense_data: 'لا توجد مصروفات لعرضها'
+    no_recent: 'لا توجد معاملات حديثة', no_expense_data: 'لا توجد مصروفات لعرضها',
+    nav_about: 'من نحن', nav_services: 'خدماتنا', nav_contact: 'تواصل معنا',
+    about_sub: 'تعرف على مشروع مصروفي ورؤيتنا وأهدافنا',
+    about_project_name: 'مصروفي Masroofi',
+    about_tagline: 'منصة ذكية لإدارة الأموال الشخصية',
+    about_desc: 'مصروفي منصة ذكية لإدارة الأموال الشخصية، تهدف إلى مساعدة المستخدمين على تنظيم ميزانياتهم ومتابعة دخلهم ومصروفاتهم وتحقيق أهدافهم المالية بطريقة سهلة وفعالة.',
+    about_vision_title: 'رؤيتنا',
+    about_vision_text: 'أن نكون المنصة الموثوقة التي تساعد الأفراد على بناء وعي مالي أفضل واتخاذ قرارات مالية أكثر وضوحًا وثقة.',
+    about_goals_title: 'أهدافنا',
+    about_goal1: 'تبسيط متابعة الدخل والمصروفات اليومية.',
+    about_goal2: 'مساعدة المستخدمين على الالتزام بالميزانية وتحقيق أهداف الادخار.',
+    about_goal3: 'تقديم تحليلات واضحة تدعم التخطيط المالي الذكي.',
+    services_sub: 'حلول عملية لمساعدتك على إدارة أموالك بفعالية',
+    service_budget_title: 'إدارة الميزانية',
+    service_budget_desc: 'مساعدة المستخدم على تنظيم دخله وتوزيع ميزانيته الشهرية والتحكم في مصروفاته.',
+    service_analysis_title: 'تحليل المصروفات',
+    service_analysis_desc: 'تقديم تحليلات ورسوم بيانية توضح المصروفات وتصنيفاتها وتساعد المستخدم على فهم عاداته المالية.',
+    service_savings_title: 'التخطيط للادخار',
+    service_savings_desc: 'مساعدة المستخدم على إنشاء أهداف ادخار ومتابعة المبالغ المدخرة ونسبة التقدم نحو تحقيق أهدافه.',
+    contact_sub: 'يسعدنا تواصلك معنا لأي استفسار أو ملاحظة',
+    contact_info_title: 'معلومات التواصل',
+    contact_activity_label: 'اسم النشاط:',
+    contact_activity_name: 'مصروفي',
+    contact_whatsapp_label: 'رقم واتساب:',
+    contact_address_label: 'العنوان:',
+    contact_address_value: 'منصة مصروفي لإدارة الأموال الشخصية',
+    contact_whatsapp_btn: 'تواصل معنا عبر واتساب',
+    contact_form_title: 'أرسل رسالة',
+    contact_name: 'الاسم',
+    contact_name_ph: 'أدخل اسمك',
+    contact_email: 'البريد الإلكتروني',
+    contact_email_ph: 'example@email.com',
+    contact_message: 'الرسالة',
+    contact_message_ph: 'اكتب رسالتك هنا',
+    contact_send: 'إرسال الرسالة',
+    contact_err_required: 'يرجى تعبئة جميع الحقول المطلوبة.',
+    contact_err_email: 'يرجى إدخال بريد إلكتروني صحيح.',
+    contact_success: 'تم استلام رسالتك بنجاح، سنقوم بالتواصل معك قريبًا.'
   },
   en: {
     brand_sub: 'Masroofi', slogan: 'Manage Your Money, Shape Your Future.',
@@ -93,7 +130,44 @@ const i18n = {
     enter_amount: 'Enter amount to add', invalid_saved: 'Invalid value', budget_saved: 'Budget saved',
     cat_food: 'Food', cat_shopping: 'Shopping', cat_transportation: 'Transportation', cat_study: 'Study', cat_bills: 'Bills',
     cat_health: 'Health', cat_entertainment: 'Entertainment', cat_salary: 'Salary', cat_bonuses: 'Bonuses', cat_other: 'Other',
-    no_recent: 'No recent transactions', no_expense_data: 'No expenses to display'
+    no_recent: 'No recent transactions', no_expense_data: 'No expenses to display',
+    nav_about: 'About Us', nav_services: 'Our Services', nav_contact: 'Contact Us',
+    about_sub: 'Learn about Masroofi, our vision, and our goals',
+    about_project_name: 'Masroofi',
+    about_tagline: 'A smart platform for personal finance management',
+    about_desc: 'Masroofi is a smart personal finance management platform that helps users organize their budgets, track income and expenses, and achieve their financial goals easily and effectively.',
+    about_vision_title: 'Our Vision',
+    about_vision_text: 'To be the trusted platform that helps individuals build better financial awareness and make clearer, more confident financial decisions.',
+    about_goals_title: 'Our Goals',
+    about_goal1: 'Simplify tracking daily income and expenses.',
+    about_goal2: 'Help users stick to their budget and achieve savings goals.',
+    about_goal3: 'Provide clear insights that support smart financial planning.',
+    services_sub: 'Practical solutions to help you manage your money effectively',
+    service_budget_title: 'Budget Management',
+    service_budget_desc: 'Helping users organize their income, allocate their monthly budget, and control their expenses.',
+    service_analysis_title: 'Expense Analysis',
+    service_analysis_desc: 'Providing analytics and charts that show expenses and categories, helping users understand their financial habits.',
+    service_savings_title: 'Savings Planning',
+    service_savings_desc: 'Helping users create savings goals, track saved amounts, and monitor progress toward achieving their targets.',
+    contact_sub: 'We are happy to hear from you for any inquiry or feedback',
+    contact_info_title: 'Contact Information',
+    contact_activity_label: 'Business name:',
+    contact_activity_name: 'Masroofi',
+    contact_whatsapp_label: 'WhatsApp number:',
+    contact_address_label: 'Address:',
+    contact_address_value: 'Masroofi platform for personal finance management',
+    contact_whatsapp_btn: 'Contact us on WhatsApp',
+    contact_form_title: 'Send a Message',
+    contact_name: 'Name',
+    contact_name_ph: 'Enter your name',
+    contact_email: 'Email',
+    contact_email_ph: 'example@email.com',
+    contact_message: 'Message',
+    contact_message_ph: 'Write your message here',
+    contact_send: 'Send Message',
+    contact_err_required: 'Please fill in all required fields.',
+    contact_err_email: 'Please enter a valid email address.',
+    contact_success: 'Your message has been received successfully. We will get back to you soon.'
   }
 };
 
@@ -618,6 +692,36 @@ function deleteAllData() {
   });
 }
 
+// ---------- Contact ----------
+function showContactFormMessage(type, key) {
+  const el = document.getElementById('contactFormMessage');
+  if (!el) return;
+  el.className = 'form-message ' + (type || '');
+  el.textContent = key ? t(key) : '';
+}
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const message = document.getElementById('contactMessage').value.trim();
+  if (!name || !email || !message) {
+    showContactFormMessage('error', 'contact_err_required');
+    showToast(t('contact_err_required'), 'error');
+    return;
+  }
+  if (!isValidEmail(email)) {
+    showContactFormMessage('error', 'contact_err_email');
+    showToast(t('contact_err_email'), 'error');
+    return;
+  }
+  showContactFormMessage('success', 'contact_success');
+  showToast(t('contact_success'), 'success');
+  document.getElementById('contactForm').reset();
+}
+
 // ---------- Events ----------
 function bindEvents() {
   document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', e => { e.preventDefault(); showSection(link.dataset.section); }));
@@ -649,6 +753,15 @@ function bindEvents() {
   document.getElementById('goalForm').addEventListener('submit', saveGoal);
   // analytics
   document.getElementById('analyticsMonth').addEventListener('change', renderAnalytics);
+  // contact
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleContactSubmit);
+    ['contactName','contactEmail','contactMessage'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => showContactFormMessage('', ''));
+    });
+  }
   // settings
   document.getElementById('settingLanguage').addEventListener('change', e=>{ state.settings.lang=e.target.value; saveState(); applySettings(); renderAll(); });
   document.getElementById('settingTheme').addEventListener('change', e=>{ state.settings.theme=e.target.value; saveState(); applySettings(); renderCharts(); renderAnalytics(); });
